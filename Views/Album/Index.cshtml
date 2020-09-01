@@ -1,0 +1,37 @@
+﻿@model List<AlbumWeb.ViewModels.AlbumViewModel>
+
+@{ 
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table">
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Título de Album
+            </th>
+        </tr>
+ 
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.Id
+                </td>
+                <td>
+                    @item.Title
+                </td>
+                <td>
+                    
+                    <a class="btn btn-primary" href="@Url.Action("Index", "Fotos", new { id=item.Id })">
+                        Visualizar el Album
+                    </a>
+                </td>
+            </tr>
+        }
+ 
+</table>
+

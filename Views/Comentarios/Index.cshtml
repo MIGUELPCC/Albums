@@ -1,0 +1,41 @@
+﻿@model IEnumerable<AlbumWeb.ViewModels.ComentariosViewModel>
+
+
+<table class="table">
+    <tr>
+        <th class="text-center" colspan="4">Comentarios</th>
+    </tr>
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            Nombre
+        </th>
+        <th>
+            Email
+        </th>
+        <th>
+            Comentario
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            
+            @item.PostId
+        </td>
+        <td>
+            @item.Name
+        </td>
+        <td>
+            @item.Email
+        </td>
+        <td>
+            @item.Body
+        </td>       
+    </tr>
+}
+
+</table>
